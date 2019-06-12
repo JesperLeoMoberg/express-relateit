@@ -1,0 +1,45 @@
+<div class="container">
+  <p><br/></p>
+  <div class="row">
+    <div class=" col-sm-12 ">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="page-header text-center">
+            <h3>create Area</h3>
+          </div>
+          <form id="create-form" name="CreateForm" action="/users/register" method="post">
+            <div class="form-group">
+              <label for="exampleInputUsername1">Username</label>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
+                <input name="username" type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
+                <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-star-empty"></span></span>
+                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+            </div>
+            <hr/>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span>Submit</button>
+              <a class="btn btn-secondary " href="/users/login"> <span class="glyphicon glyphicon-ok"></span>Login</a>
+            </div>
+            <p>
+              <br/>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
