@@ -12,6 +12,7 @@ var cookieParser = require('cookie-parser');
 var flash = require('connect-flash');
 const connection = require('../db/db-connect');
 
+
 // Passport
 const bcrypt = require('bcryptjs');
 var passport = require('passport');
@@ -26,19 +27,20 @@ router.use(cookieParser('secret'));
 router.use(session({
     secret: 'I7^dj23ff@9LvB6siu^7$uInxGhMw2',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: true
 }));
 router.use(passport.initialize());
 router.use(passport.session());
 router.use(flash());
 
-
-
-
-
 // for users
 router.get('/login', function (req, res){
-  res.render('login');
+  if(req.isAuthenticated()){
+    req.flash('error', "You're already logged in.")
+    res.redirect('../list');
+  }else{
+    res.render('login', {message: req.flash('error')});
+  }
 });
 
 router.post('/login', function(req, res, next){
@@ -50,7 +52,12 @@ router.post('/login', function(req, res, next){
 });
 
 router.get('/register', function (req, res){
-  res.render('register');
+  if(req.isAuthenticated()){
+    req.flash('error', "You're already logged in - no need to register")
+    res.redirect('../list');
+  }else{
+    res.render('register');
+  }
 });
 
 router.post('/register', function(req, res){

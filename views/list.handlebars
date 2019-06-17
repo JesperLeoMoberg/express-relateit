@@ -1,5 +1,13 @@
 <div class="col-md-12" style="text-align:center;margin-top:50px;margin-bottom:50px;">
   <div class="list-group col-md-4" style="display:inline-block;">
+    {{#if message}}
+      <div class="alert alert-warning alert-alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {{/if}}
     <a href="api/posts" class="list-group-item list-group-item-action m-1">Se alle posts</a>
     <a href="api/posts/1" class="list-group-item list-group-item-action m-1">Se posten med id <span class="badge badge-primary badge-pill">1</span></a>
     <a href="api/posts/count" class="list-group-item list-group-item-action m-1">Se hvor mange posts der er lavet</a>
